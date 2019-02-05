@@ -30,6 +30,12 @@ pipeline {
 			echo "Hello"
                         }
         }
+	    stage('Two'){
+		    
+		steps {
+			input('Do you want to proceed?')
+        }
+	    }
         stage('Four') {
                 parallel {
                         stage('Unit Test') {
