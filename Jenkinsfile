@@ -13,6 +13,13 @@ pipeline {
 			input('Do you want to proceed?')
         }
 	    }
+	    stage('sample'){
+		    steps  
+		    {
+			    input('press continue to proceed')
+			    echo ('hello , testing')
+		    }
+	    }
         stage('Three') {
                 when {
                         not {
@@ -33,7 +40,7 @@ pipeline {
                         stage('Integration test') {
                         agent {
                                 docker {
-                                        reuseNode false
+                                    
 					image 'ubuntu'
                                         }
 			}
